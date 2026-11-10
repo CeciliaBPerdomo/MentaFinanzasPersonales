@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Manrope', sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --color-paper: #f7f8f2;
+  --color-ink: #232b25;
+  --color-muted: #777e74;
+  --color-line: #e8ebe2;
+  --color-lime: #e6f4ad;
+  --color-mint: #e0f3eb;
+  --color-coral: #f26a48;
+}
+
+@layer base {
+  body { margin: 0; min-width: 320px; background: #e7e9e1; color: var(--color-ink); font-family: var(--font-sans); }
+  button, select, input { font: inherit; }
+  button, select { cursor: pointer; }
+  button { transition: background-color 160ms, color 160ms, transform 160ms; }
+  button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid #587b45; outline-offset: 4px; }
+  button:disabled { cursor: default; }
+  ::selection { background: #e6f4ad; }
+}
+
+@keyframes enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: no-preference) {
+  .page-enter { animation: enter 450ms ease-out both; }
+}
